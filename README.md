@@ -24,14 +24,14 @@ in this approach, each sandwich and condiment have its own class as well as exte
 └── Turkey
 ```
 
-<img src="img_2.png" width="300"/>
+<img src="codeSnippets/img_2.png" width="300"/>
 
 ## Implementation
-<img src="img_5.png" width="500"/>
+<img src="codeSnippets/img_5.png" width="500"/>
 
 `Output`
 
-<img src="img_6.png" width="150"/>
+<img src="codeSnippets/img_6.png" width="150"/>
 
 
 **This approach flaws lies in:** 
@@ -44,16 +44,16 @@ in this approach, each sandwich and condiment have its own class as well as exte
 # Approach 2 - Boolean 
 in this approach, all the condiments logic will be inside the class `Sandwich` itself.
 
-<img src="img_7.png" width="150"/>
+<img src="codeSnippets/img_7.png" width="150"/>
 
 ## Implementation 
 
-<img src="img_8.png" width="500"/>
-<img src="img_14.png" width="200"/>
+<img src="codeSnippets/img_8.png" width="500"/>
+<img src="codeSnippets/img_14.png" width="200"/>
 
 `Output`
 
-<img src="img_10.png" width="500"/>
+<img src="codeSnippets/img_10.png" width="500"/>
 
 **This approach flaws lies in:**
 * At any point, calling any condiment method, the condiments/description and price would stack, but will change the description permanently mutating the object.
@@ -80,12 +80,12 @@ Sandwich (abstract)
     └── Mustard
 ```
 ## Implementation
-<img src="img_11.png" width="500"/>
-<img src="img_13.png" width="100"/>
+<img src="codeSnippets/img_11.png" width="500"/>
+<img src="codeSnippets/img_13.png" width="100"/>
 
 `Output`
 
-<img src="img_12.png" width="250"/>
+<img src="codeSnippets/img_12.png" width="250"/>
 
 ## How it works
 At first we make a decorator class `CondimentDecorator` that extends `Sandwich`
