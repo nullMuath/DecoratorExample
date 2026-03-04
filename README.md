@@ -35,21 +35,21 @@ in this approach, each sandwich and condiment have its own class as well as exte
 
 
 **This approach flaws lies in:** 
->* Readability, creating a lot of almost identical classes.
->*  If you want to add a new condiment, you will have to add them to modify 5 classes `Steak`,`Tuna`,`Turkey`,`Veggie`
->and `Chicken`. and vice versa for adding a new type of sandwich, **which will result in difficulty in maintaining**.
->* Violating Open-Closed principle, where adding a new condiment/sandwich type, will force you to modify the already existing classes rather than adding new behavior.
->* Stackability, you won't be able to stack another condiment once you add one.
+* Readability, creating a lot of almost identical classes.
+*  If you want to add a new condiment, you will have to add them to modify 5 classes `Steak`,`Tuna`,`Turkey`,`Veggie`
+and `Chicken`. and vice versa for adding a new type of sandwich, **which will result in difficulty in maintaining**.
+* Violating Open-Closed principle, where adding a new condiment/sandwich type, will force you to modify the already existing classes rather than adding new behavior.
+* Stackability, you won't be able to stack another condiment once you add one.
 
 # Approach 2 - Boolean 
 in this approach, all the condiments logic will be inside the class `Sandwich` itself.
 
-<img src="codeSnippets/img_7.png" width="150"/>
+<img src="codeSnippets/img_7.png" width="500"/>
 
 ## Implementation 
 
 <img src="codeSnippets/img_8.png" width="500"/>
-<img src="codeSnippets/img_14.png" width="200"/>
+<img src="codeSnippets/img_14.png" width="500"/>
 
 `Output`
 
@@ -81,11 +81,12 @@ Sandwich (abstract)
 ```
 ## Implementation
 <img src="codeSnippets/img_11.png" width="500"/>
-<img src="codeSnippets/img_13.png" width="100"/>
+
+<img src="codeSnippets/img_13.png" width="150"/>
 
 `Output`
 
-<img src="codeSnippets/img_12.png" width="250"/>
+<img src="codeSnippets/img_12.png" width="500"/>
 
 ## How it works
 At first we make a decorator class `CondimentDecorator` that extends `Sandwich`
@@ -97,10 +98,10 @@ We make a new `Sandwich` Object, then we wrap it with the condiments, making sur
 Sandwich mmmTastySandwich = new Mayo(new Garlic(new Ranch(new Steak())));
 ```
 ## Why this is approach better
->* The object itself isn't mutated, but it received additional behavior. with the ability to still call the base object.
->* Stacking multiple behaviors in any order.
->* Follows Open-Closed principle, adding new condiment means adding new class rather than changing the existing classes.
->* Each class holds a single responsibility.
+* The object itself isn't mutated, but it received additional behavior. with the ability to still call the base object.
+* Stacking multiple behaviors in any order.
+* Follows Open-Closed principle, adding new condiment means adding new class rather than changing the existing classes.
+* Each class holds a single responsibility.
 
 
 
